@@ -1,4 +1,4 @@
-FROM ezeddin/nvidia-gpu:conda
+FROM ezeddin/nvidia-gpu:latest
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
