@@ -20,12 +20,7 @@ RUN apt-get update && apt-get install -y \
     locales \
     tzdata \
     ca-certificates \
-    libsm6 \
-    libxext-dev \
-    libxrender1 \
     jq \
-    libgl1 \
 	&& rm -rf /var/lib/apt/lists/*
-
 
 WORKDIR /root
