@@ -1,0 +1,6 @@
+FROM ezeddin/nvidia-gpu:conda
+
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+EXPOSE 8300
+CMD ["code-server", "--host", "0.0.0.0", "--auth", "none", "--port", "8300"]
