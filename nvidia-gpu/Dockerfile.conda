@@ -1,0 +1,9 @@
+FROM ezeddin/nvidia-gpu:base
+
+ENV CONDA_BIN=/opt/conda
+
+RUN cd /tmp && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+RUN cd /tmp && sh Miniconda3* -u -b -p $CONDA_BIN
+RUN $CONDA_BIN/bin/conda init bash
+
+WORKDIR /root
