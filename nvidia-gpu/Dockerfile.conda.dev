@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     tzdata \
     ca-certificates \
     jq \
+    less \
 	&& rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
