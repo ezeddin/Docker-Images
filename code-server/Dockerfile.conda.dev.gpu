@@ -28,5 +28,10 @@ RUN cp -r /root/.bashrc /home/$UNAME && \
 
 USER $UNAME
 
+COPY --chown=$UNAME:$UNAME code-server-update.sh /opt/scripts/code-server-update.sh
+RUN chmod 0777 /opt/scripts/code-server-update.sh
+
+RUN echo '\nexport PATH="/opt/scripts:$PATH"' >> /home/$UNAME/.bashrc
+
 EXPOSE 8300
 CMD ["code-server", "--host", "0.0.0.0", "--auth", "none", "--port", "8300"]
