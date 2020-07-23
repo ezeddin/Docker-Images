@@ -21,7 +21,6 @@ RUN echo "$UNAME ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$UNAME && \
     chmod 0440 /etc/sudoers.d/$UNAME
 WORKDIR /home/$UNAME
 
-RUN chown -R $UNAME:$UNAME /opt/conda
 RUN cp -r /root/.bashrc /home/$UNAME && \
     chown -R $UNAME:$UNAME /home/$UNAME
 
