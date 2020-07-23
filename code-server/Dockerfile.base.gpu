@@ -29,10 +29,13 @@ RUN mkdir -p /opt/scripts && \
 
 USER $UNAME
 
-COPY --chown=$UNAME:$UNAME code-server-update.sh /opt/scripts/code-server-update.sh
+COPY --chown=$UNAME:$UNAME files/code-server-update.sh /opt/scripts/code-server-update.sh
 RUN chmod 0777 /opt/scripts/code-server-update.sh
-
 RUN echo '\nexport PATH="/opt/scripts:$PATH"' >> /home/$UNAME/.bashrc
+
+### Install VSCode extension
+RUN code-server --install-extension ms-python.python@2020.5.86806
+COPY --chown=$UNAME:$UNAME files/settings.json /home/$UNAME/.local/share/code-server/User/settings.json
 
 EXPOSE 8300
 CMD ["code-server", "--host", "0.0.0.0", "--auth", "none", "--port", "8300"]

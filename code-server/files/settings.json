@@ -1,0 +1,11 @@
+{
+    "extensions.autoUpdate": false,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "python.dataScience.useDefaultConfigForJupyter": false,
+    "python.pythonPath": "/opt/conda/bin/python",
+    "files.exclude": {
+        "**/.*": true
+    },
+    "python.jediEnabled": true,
+    "terminal.integrated.inheritEnv": true
+}
