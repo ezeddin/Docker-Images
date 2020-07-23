@@ -25,7 +25,7 @@ RUN chown -R $UNAME:$UNAME /opt/conda
 RUN cp -r /root/.bashrc /home/$UNAME && \
     cp -r /root/.conda /home/$UNAME && \
     chown -R $UNAME:$UNAME /home/$UNAME
-
+    
 USER $UNAME
 
 COPY --chown=$UNAME:$UNAME files/code-server-update.sh /opt/scripts/code-server-update.sh
@@ -35,6 +35,10 @@ RUN echo '\nexport PATH="/opt/scripts:$PATH"' >> /home/$UNAME/.bashrc
 ### Install VSCode extension
 RUN code-server --install-extension ms-python.python@2020.5.86806
 COPY --chown=$UNAME:$UNAME files/settings.json /home/$UNAME/.local/share/code-server/User/settings.json
+
+### Install Jupyter and Python 3.6
+RUN export PATH="/opt/conda/bin:$PATH" && \
+    conda install --quiet --yes pip python=3.6 jupyter
 
 EXPOSE 8300
 CMD ["code-server", "--host", "0.0.0.0", "--auth", "none", "--port", "8300"]
