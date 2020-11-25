@@ -1,6 +1,6 @@
 FROM ezeddin/nvidia-gpu:base
 
-ENV CONDA_BIN=/opt/conda
+ENV CONDA_BIN=/opt/tools/conda
 
 RUN cd /tmp && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 RUN cd /tmp && sh Miniconda3* -u -b -p $CONDA_BIN

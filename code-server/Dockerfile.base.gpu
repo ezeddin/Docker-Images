@@ -34,7 +34,8 @@ RUN chmod 0777 /opt/scripts/code-server-update.sh
 RUN echo '\nexport PATH="/opt/scripts:$PATH"' >> /home/$UNAME/.bashrc
 
 ### Install VSCode extension
-RUN code-server --install-extension ms-python.python@2020.5.86806
+COPY --chown=$UNAME:$UNAME files/ms-python.python-2020.10.332292344.vsix /tmp/ms-python.python-2020.10.332292344.vsix
+RUN ! code-server --install-extension /tmp/ms-python.python-2020.10.332292344.vsix || true
 COPY --chown=$UNAME:$UNAME files/settings.json /home/$UNAME/.local/share/code-server/User/settings.json
 
 EXPOSE 8300

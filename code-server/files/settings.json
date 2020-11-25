@@ -2,7 +2,7 @@
     "extensions.autoUpdate": false,
     "terminal.integrated.shell.linux": "/bin/bash",
     "python.dataScience.useDefaultConfigForJupyter": false,
-    "python.pythonPath": "/opt/conda/bin/python",
+    "python.pythonPath": "/opt/tools/conda/bin/python",
     "files.exclude": {
         "**/.*": true
     },
