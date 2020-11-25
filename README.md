@@ -4,7 +4,7 @@ This repository contains Dockerfiles and samples to build Docker images for open
 
 ## Nvidia GPU Images
 
-    docker push ezeddin/nvidia-gpu:<tagname>
+    docker pull ezeddin/nvidia-gpu:<tagname>
 
 - [ezeddin/nvidia-gpu:base](/nvidia-gpu/Dockerfile.base)
 - [ezeddin/nvidia-gpu:conda](/nvidia-gpu/Dockerfile.conda)
@@ -15,7 +15,7 @@ This repository contains Dockerfiles and samples to build Docker images for open
 
 ## Browser-based VSCode Images (based on Nvidia GPU)
 
-    docker push ezeddin/code-server:<tagname>
+    docker pull ezeddin/code-server:<tagname>
 
 - [ezeddin/code-server:base.gpu](/code-server/Dockerfile.base.gpu)
 - [ezeddin/code-server:conda.dev.gpu](/code-server/Dockerfile.conda.dev.gpu)
